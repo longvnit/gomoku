@@ -55,8 +55,8 @@ bool RenjuProtocolCLI::beginSession(int argc, char const *argv[]) {
             if (i >= argc - 1) continue;
 
             // Validate and copy state
-            if (validateString(argv[i + 1], 361) == 361)
-                memcpy(gs_string, argv[i + 1], 361);
+            if (validateString(argv[i + 1], 180) == 180)
+                memcpy(gs_string, argv[i + 1], 180);
 
         } else if (strncmp(arg, "-p", 2) == 0) {
             // AI player ID
@@ -80,7 +80,7 @@ bool RenjuProtocolCLI::beginSession(int argc, char const *argv[]) {
 
         } else if (strncmp(arg, "test", 4) == 0) {
             // Build test data
-            memcpy(gs_string, "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002121000000000000001211112000000000000022122110000000000001211002200000000000002010200000000000000000200000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000", 362);
+            memcpy(gs_string, "120000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000", 181);
             search_depth = 8;
             ai_player = 2;
         }
