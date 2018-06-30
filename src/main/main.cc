@@ -17,7 +17,6 @@
  */
 
 #include <protocols/cli.h>
-#include <protocols/gomocup.h>
 #include <cstring>
 
 // Exclude main() if building with tests
@@ -28,11 +27,9 @@ int main(int argc, char const *argv[]) {
 
     // Select Gomocup protocol if "pbrain' found in file name
     bool success;
-    if (strstr(argv[0], "pbrain") != nullptr) {
-        success = RenjuProtocolGomocup::beginSession(argc, argv);
-    } else {
-        success = RenjuProtocolCLI::beginSession(argc, argv);
-    }
+    
+    success = RenjuProtocolCLI::beginSession(argc, argv);
+
     return !success;
 }
 
