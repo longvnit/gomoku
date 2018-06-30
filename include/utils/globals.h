@@ -21,7 +21,8 @@
 
 #include <cstdint>
 
-extern int g_board_size;
+extern int g_board_row_size;
+extern int g_board_col_size;
 extern unsigned int g_gs_size;
 extern unsigned int g_node_count;
 extern unsigned int g_eval_count;
