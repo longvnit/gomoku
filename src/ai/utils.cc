@@ -25,7 +25,7 @@ bool RenjuAIUtils::remoteCell(const char *gs, int r, int c) {
         if (i < 0 || i >= g_board_row_size) continue;
         for (int j = c - 2; j <= c + 2; ++j) {
             if (j < 0 || j >= g_board_col_size) continue;
-            if (gs[g_board_row_size * i + j] > 0) return false;
+            if (gs[g_board_col_size * i + j] > 0) return false;
         }
     }
     return true;

@@ -28,12 +28,12 @@ class RenjuAIUtils {
 
     static inline char getCell(const char *gs, int r, int c) {
         if (r < 0 || r >= g_board_row_size || c < 0 || c >= g_board_col_size) return -1;
-        return gs[g_board_row_size * r + c];
+        return gs[g_board_col_size * r + c];
     }
 
     static inline bool setCell(char *gs, int r, int c, char value) {
         if (r < 0 || r >= g_board_row_size || c < 0 || c >= g_board_col_size) return false;
-        gs[g_board_row_size * r + c] = value;
+        gs[g_board_col_size * r + c] = value;
         return true;
     }
 

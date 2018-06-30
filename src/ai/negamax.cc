@@ -226,7 +226,7 @@ void RenjuAINegamax::searchMovesOrdered(const char *gs, int player, std::vector<
     int min_r = INT_MAX, min_c = INT_MAX, max_r = INT_MIN, max_c = INT_MIN;
     for (int r = 0; r < g_board_row_size; ++r) {
         for (int c = 0; c < g_board_col_size; ++c) {
-            if (gs[g_board_row_size * r + c] != 0) {
+            if (gs[g_board_col_size * r + c] != 0) {
                 if (r < min_r) min_r = r;
                 if (c < min_c) min_c = c;
                 if (r > max_r) max_r = r;
@@ -244,7 +244,7 @@ void RenjuAINegamax::searchMovesOrdered(const char *gs, int player, std::vector<
     for (int r = min_r - 2; r <= max_r + 2; ++r) {
         for (int c = min_c - 2; c <= max_c + 2; ++c) {
             // Consider only empty cells
-            if (gs[g_board_row_size * r + c] != 0) continue;
+            if (gs[g_board_col_size * r + c] != 0) continue;
 
             // Skip remote cells (no pieces within 2 cells)
             if (RenjuAIUtils::remoteCell(gs, r, c)) continue;

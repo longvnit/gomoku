@@ -190,7 +190,7 @@ void RenjuAIEval::measureDirection(const char *gs,
             if (cr < 0 || cr >= g_board_row_size || cc < 0 || cc >= g_board_col_size) break;
 
             // Get cell value
-            int cell = gs[g_board_row_size * cr + cc];
+            int cell = gs[g_board_col_size * cr + cc];
 
             // Empty cells
             if (cell == 0) {
@@ -286,7 +286,7 @@ int RenjuAIEval::winningPlayer(const char *gs) {
     if (gs == nullptr) return 0;
     for (int r = 0; r < g_board_row_size; ++r) {
         for (int c = 0; c < g_board_col_size; ++c) {
-            int cell = gs[g_board_row_size * r + c];
+            int cell = gs[g_board_col_size * r + c];
             if (cell == 0) continue;
             for (int dr = -1; dr <= 1; ++dr) {
                 for (int dc = -1; dc <= 1; ++dc) {
